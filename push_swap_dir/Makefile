@@ -2,6 +2,10 @@ NAME = push_swap.a
 
 NAME_EXEC = push_swap
 
+LIBFT_DIR = ./libft
+
+LIBFT_LIB = ./libft/libft.a
+
 Sources = ft_split_utils.c\
 	ft_split.c\
 	init_stack_a.c\
@@ -29,16 +33,19 @@ $(NAME): $(OBJ)
 	cc -c $< -o $@ $(flags)
 
 clean:
+	make clean -C $(LIBFT_DIR)
 	rm -f $(OBJ)
 
 fclean: clean
+	make fclean -C $(LIBFT_DIR)
 	rm -f ../$(NAME_EXEC)
 	rm -f $(NAME)
 
 re: fclean $(NAME)
 
 exec: $(OBJ)
-	cc $(flags) push_swap.c $(OBJ) -o $(NAME_EXEC)
+	make -C $(LIBFT_DIR)
+	cc $(flags) push_swap.c $(OBJ) $(LIBFT_LIB) -o $(NAME_EXEC)
 	mv $(NAME_EXEC) ../
 
 .PHONY: all clean fclean re bonus exec

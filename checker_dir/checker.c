@@ -6,26 +6,13 @@
 /*   By: jose-ara < jose-ara@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 21:56:31 by jose-ara          #+#    #+#             */
-/*   Updated: 2025/01/02 18:52:32 by jose-ara         ###   ########.fr       */
+/*   Updated: 2025/01/03 14:33:16 by jose-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap_dir/libft/libft.h"
+#include "../push_swap_dir/push_swap.h"
 #include "get_next_line.h"
-#include <stdio.h>
-
-static int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	if (!n)
-		return (0);
-	while (*s1 && *s2 && ((unsigned char)(*s1) == (unsigned char)(*s2))
-		&& n > 1)
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	return ((unsigned char)(*s1) - (unsigned char)(*s2));
-}
 
 int	exec_operations(t_stacks *stacks, char *str)
 {

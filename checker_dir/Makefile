@@ -12,6 +12,8 @@ PUSH_SWAP_PATH = ../push_swap_dir/
 
 PUSH_SWAP_LIB = push_swap.a
 
+LIBFT_LIB = ../push_swap_dir/libft/libft.a
+
 all: $(NAME)
 
 $(PUSH_SWAP_LIB):
@@ -19,7 +21,7 @@ $(PUSH_SWAP_LIB):
 	cp $(PUSH_SWAP_PATH)$(PUSH_SWAP_LIB) .
 
 $(NAME): $(OBJ) $(PUSH_SWAP_LIB)
-	cc $(flags) $(OBJ) -L. -l:$(PUSH_SWAP_LIB) -o $(NAME)
+	cc $(flags) $(OBJ) $(PUSH_SWAP_LIB) $(LIBFT_LIB) -o $(NAME)
 	mv $(NAME) ../
 
 %.o: %.c

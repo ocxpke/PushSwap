@@ -6,7 +6,7 @@
 /*   By: jose-ara < jose-ara@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:56:22 by jose-ara          #+#    #+#             */
-/*   Updated: 2025/01/02 14:17:21 by jose-ara         ###   ########.fr       */
+/*   Updated: 2025/01/03 14:24:36 by jose-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	add_splitted(int **ret, char **splitted, size_t *pos)
 	while (splitted[cont_w])
 	{
 		cont_l = 0;
-		while (cont_l < ft_strlen(splitted[cont_w]))
+		while (cont_l < ft_strlen_ss(splitted[cont_w]))
 		{
 			val = ft_atoi(&splitted[cont_w][cont_l]);
 			if (val > INT_MAX || val < INT_MIN)
@@ -102,7 +102,7 @@ int	*init_stack_a(int argc, char **args, int cont)
 	while ((cont < argc) && ret)
 	{
 		splitted = ft_split(args[cont], ' ');
-		if (!splitted || !check_splitted(splitted) || !ft_strlen(args[cont]))
+		if (!splitted || !check_splitted(splitted) || !ft_strlen_ss(args[cont]))
 		{
 			free(ret);
 			free_back(splitted);

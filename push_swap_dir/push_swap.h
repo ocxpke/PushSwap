@@ -6,13 +6,14 @@
 /*   By: jose-ara < jose-ara@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 18:42:34 by jose-ara          #+#    #+#             */
-/*   Updated: 2025/01/02 18:17:00 by jose-ara         ###   ########.fr       */
+/*   Updated: 2025/01/03 14:29:17 by jose-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "./libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -30,37 +31,12 @@ typedef struct s_stacks
  * PUSH_SWAP_UTILS.C
  */
 /**
- * @brief Set first n-positions to 0
- *
- * @param s void pointer
- * @param n numer of bytes to check
- * @return void
- */
-void			ft_bzero(void *s, size_t n);
-/**
- * @brief Allocates nmeb * size bytes of memory and set them all to 0
- *
- * @param nmeb number of memory blocks
- * @param size size fo each block (in bytes)
- * @return pointer to the memory allocated or null
- */
-void			*ft_calloc(size_t nmeb, size_t size);
-/**
- * @brief Writes the first n-posstions of src into dst
- *
- * @param dst pointer of destination
- * @param src pointer of source
- * @param n the number of bytes to read
- * @return pointer to dst or null
- */
-void			*ft_memcpy(void *dst, const void *src, size_t n);
-/**
  * @brief Transformrs the ascii recived to long long integer
  *
  * @param nptr pointer to the string where the number is
  * @return the long long integer value
  */
-long long int	ft_atoi(const char *nptr);
+long long int	ft_atoi_long_long(const char *nptr);
 
 /**
  * MANAGE_STACK_STRUCT.C
@@ -227,13 +203,6 @@ char			**free_back(char **words);
  * FT_SPLIT_UTILS.C
  */
 /**
- * @brief Returns if c is a numeric digit character or not
- *
- * @param c the ascii value of the character
- * @return if it is a numeric digit character or not
- */
-int				ft_isdigit(int c);
-/**
  * @brief Using ft_isdigit checks if all string elements are digit
  *
  * @param str String to be checked
@@ -249,21 +218,12 @@ int				ft_is_all_digit(const char *str);
  */
 int				check_splitted(char **splitted);
 /**
- * @brief Tries to take a substr from s
- *
- * @param s string we will make a substr from
- * @param start postion of the first character
- * @param len length of the substr
- * @return pointer to positon of substr or null
- */
-char			*ft_substr(const char *s, unsigned int start, size_t len);
-/**
  * @brief Gives you the length of s
  *
  * @param s string we will measure
  * @return size of s
  */
-ssize_t			ft_strlen(const char *s);
+ssize_t			ft_strlen_ss(const char *s);
 
 /**
  * INIT_STACK_A.C
