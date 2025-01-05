@@ -6,7 +6,7 @@
 /*   By: jose-ara < jose-ara@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:56:22 by jose-ara          #+#    #+#             */
-/*   Updated: 2025/01/03 14:24:36 by jose-ara         ###   ########.fr       */
+/*   Updated: 2025/01/05 11:45:03 by jose-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ static void	add_splitted(int **ret, char **splitted, size_t *pos)
 		cont_l = 0;
 		while (cont_l < ft_strlen_ss(splitted[cont_w]))
 		{
-			val = ft_atoi(&splitted[cont_w][cont_l]);
-			if (val > INT_MAX || val < INT_MIN)
+			val = ft_atoi_long_long(&splitted[cont_w][cont_l]);
+			if (val > INT_MAX || val < INT_MIN
+				|| digit_len(&splitted[cont_w][cont_l]) > 10)
 			{
 				free(*ret);
 				*ret = 0;
