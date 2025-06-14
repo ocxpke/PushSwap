@@ -7,7 +7,7 @@
 > *Un proyecto de algoritmia que desafía la eficiencia: ordenar datos con el mínimo número de operaciones posibles.*
 
 ## 🔗 Subject
-
+[Subject](./pushSwapProject.pdf)
 
 ## 📋 Tabla de Contenidos
 - [🎯 Descripción](#-descripción)
